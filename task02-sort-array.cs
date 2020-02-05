@@ -11,11 +11,10 @@ public class Program
     public static string[] SortStringArray(string[] array)
     {
         // ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА.
-        /*if (array == null)
+        if (array == null)
         {
-            throw new ArgumentNullException(array);
+            throw new ArgumentNullException(nameof(array);
         }
-        */
         string temp;
         for (int i = 0; i < array.Length - 1; i++)
         {
