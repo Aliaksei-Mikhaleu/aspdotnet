@@ -12,7 +12,7 @@ public class Program
 		// ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА
 		if (s == null)
 		{
-			throw new ArgumentNullException(s);
+			throw new ArgumentNullException(nameof(s));
 		}
 		
 		string vowels = new string ("aeiou");
