@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 // Задача: реализовать метод SortStringArray, который должен возвращать сортированный массив строк.
@@ -11,17 +11,19 @@ public class Program
     public static string[] SortStringArray(string[] array)
     {
         // ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА.
+        
         if (array == null)
         {
-            throw new ArgumentNullException(nameof(array);
+            throw new ArgumentNullException(nameof(array));
         }
+        
         string temp;
+        
         for (int i = 0; i < array.Length - 1; i++)
         {
             for (int j = i + 1; j < array.Length; j++)
             {
                 if (array[j].Length < array[i].Length)
-
                 {
                     temp = array[i];
                     array[i] = array[j];
