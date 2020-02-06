@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 // Задача: реализовать метод FindMinMax, который должен возвращать минимальное и максимальное значение в массиве вложенных массивов (jagged array).
 //   * Метод должен возвращать true, если он содержит хотя бы одно числовое значение.
@@ -14,40 +14,41 @@ public class Program
 		max = int.MaxValue;
 
 		// ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА
-              
 		if (array == null)
 		{
 			throw new ArgumentNullException(nameof(array));
 		}
 
-                bool digit = false;
-                max = int.MinValue;
+		bool digit = false;
+		max = int.MinValue;
 		min = int.MaxValue;
-		
 
-		for (int i = 0; i < array.Rank; i++) 
-                {
-                   if array[i] = null
-                   {
-                       continue;
-                   } 
-                
+		for (int i = 0; i < array.Rank; i++)
+		{
+			if (array[i] == null)
+			{
+				continue;
+			}
 
-                for (int j = 0; j < array[i].Rank; j++) 
-                {
-                   if (min > array[i][j]) 
-                   {
-                       min = array[i][j];
-                   } 
-                   if (max < array[i][j]) 
-                   {
-                       max = array[i][j];
-                   } 
-                       digit = true;
-                } 
-
-               } 
-/*
+			for (int j = 0; j < array[i].Rank; j++)
+			{
+				if (min > array[i][j])
+				{
+					min = array[i][j];
+				}
+				if (max < array[i][j])
+				{
+					max = array[i][j];
+				}
+				digit = true;
+			}
+		}
+		if (digit == false)
+		{
+			min = max = 0;
+		}
+		/*
+		//меряем массив массивов
 		var rank = array.Rank;
 		var size = new int[rank];
 
@@ -57,7 +58,7 @@ public class Program
 		}
 
 		for (int len = 0; len < rank; len++)
-	        {
+			{
 			//проверяем массивы на null
 			if (array[len] == null)
 				{
@@ -83,7 +84,7 @@ public class Program
 					}
 				}
 			}
-		*/
+		}*/
 		return digit;
 	}
 
