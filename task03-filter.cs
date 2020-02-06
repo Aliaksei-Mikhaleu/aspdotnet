@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +19,15 @@ public class Program
 		{
 			throw new ArgumentNullException(nameof(source));
 		}
-		
-		List<int> tmp = source.ToList();
+
 		bool dubl;
+
+		var tmp = new List<int>(source.Length);
+		
+		foreach (var i in source)
+		{
+			tmp.Add(i);
+		}
 		
 		for (int i = 0; i < tmp.Count - 1; i++)
 		{
