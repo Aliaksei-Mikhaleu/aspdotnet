@@ -10,7 +10,7 @@ public class Program
 	public static int CountVowels(string s)
 	{
 		// ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА
-		
+
 		if (s == null)
 		{
 			throw new ArgumentNullException(nameof(s));
