@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 // Задача: реализовать метод CountVowels, который должен подсчитывать количество гласных символов в переданной строке.
 //   * Гласными считаются символы - 'a', 'e', 'i', 'o', 'u'.
@@ -10,24 +10,24 @@ public class Program
 	public static int CountVowels(string s)
 	{
 		// ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА
+		
 		if (s == null)
 		{
 			throw new ArgumentNullException(nameof(s));
 		}
-		
-		string vowels = new string ("aeiou");
-		
-		int count = 0;
 
-		foreach (char d in s)
+		var vowels = "aeiou";
+		var count = 0;
+
+		foreach (char letter in s)
 		{
-			if (vowels.Contains(d))
+			if (vowels.Contains(letter.ToString()))
 			{
 				count++;
 			}
 
 		}
-		
+
 		return count;
 	}
 
