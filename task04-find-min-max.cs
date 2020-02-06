@@ -20,7 +20,7 @@ public class Program
 			throw new ArgumentNullException(nameof(array));
 		}
 
-		bool digit = false;
+		bool isDigitExists = false;
 		max = int.MinValue;
 		min = int.MaxValue;
 
@@ -41,16 +41,16 @@ public class Program
 				{
 					max = array[i][j];
 				}
-				digit = true;
+				isDigitExists = true;
 			}
 		}
 		
-		if (digit == false)
+		if (isDigitExists == false)
 		{
 			min = max = 0;
 		}
 		
-		return digit;
+		return isDigitExists;
 	}
 
 	// ДОБАВЬТЕ НОВЫЕ МЕТОДЫ, ЕСЛИ НЕОБХОДИМО
