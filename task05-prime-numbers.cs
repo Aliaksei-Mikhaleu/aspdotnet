@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,30 +14,39 @@ public class Program
 	{
 		// ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА.
 		
-		var tmp = new List<int>();
-		var arrayofsimple = new int[] { };
-		
+		if (end < start)
+		{
+			throw new ArgumentException();
+		}
+
+		if (start <= 1)
+		{
+			throw new ArgumentException();
+		}
+
+		var simpleNumbers = new List<int>();
+				
 		for (int i = start; i <= end; i++)
 		{
-			if (isSimple(i))
+			if (IsSimple(i))
 			{
-				tmp.Add(i);
+				simpleNumbers.Add(i);
 			}
 		}
 
-		arrayofsimple = tmp.ToArray();
-		
-		return arrayofsimple;
+		return simpleNumbers.ToArray();
 	}
 
 	// ДОБАВЬТЕ НОВЫЕ МЕТОДЫ, ЕСЛИ НЕОБХОДИМО
-		private static bool isSimple(int N)
+	
+	private static bool IsSimple(int number)
 	{
-		for (int i = 2; i <= (int)(N / 2); i++)
+		for (int i = 2; i <= Math.Sqrt(number); i++)
 		{
-			if (N % i == 0)
+			if (number % i == 0)
 				return false;
 		}
+		
 		return true;
 	}
 	
