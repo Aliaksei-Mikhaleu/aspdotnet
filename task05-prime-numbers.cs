@@ -19,9 +19,9 @@ public class Program
 			throw new ArgumentException(nameof(end), "end < start");
 		}
 
-		if (start <= 1)
+		if (start < 2)
 		{
-			throw new ArgumentException(nameof(start), "start <= 1");
+			throw new ArgumentException(nameof(start), "start < 2");
 		}
 
 		var primeNumbers = new List<int>();
