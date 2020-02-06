@@ -14,6 +14,7 @@ public class Program
 		max = int.MaxValue;
 
 		// ИЗМЕНИТЕ КОД ЭТОГО МЕТОДА
+		
 		if (array == null)
 		{
 			throw new ArgumentNullException(nameof(array));
@@ -23,14 +24,14 @@ public class Program
 		max = int.MinValue;
 		min = int.MaxValue;
 
-		for (int i = 0; i < array.Rank; i++)
+		for (int i = 0; i < array.Length; i++)
 		{
 			if (array[i] == null)
 			{
 				continue;
 			}
 
-			for (int j = 0; j < array[i].Rank; j++)
+			for (int j = 0; j < array[i].Length; j++)
 			{
 				if (min > array[i][j])
 				{
@@ -43,48 +44,12 @@ public class Program
 				digit = true;
 			}
 		}
+		
 		if (digit == false)
 		{
 			min = max = 0;
 		}
-		/*
-		//меряем массив массивов
-		var rank = array.Rank;
-		var size = new int[rank];
-
-		for (int len = 0; len < rank; len++)
-		{
-			size[len] = array.GetLength(len);
-		}
-
-		for (int len = 0; len < rank; len++)
-			{
-			//проверяем массивы на null
-			if (array[len] == null)
-				{
-					continue;
-				}
-			else
-			{
-
-				foreach (int element in array[len])
-				{
-					//проверка на число
-					if (element.GetType == typeof(int))
-					{
-						digit = true;
-						if (element < min)
-						{
-							min = element;
-						}
-						else if (max < element)
-						{
-							max = element;
-						}
-					}
-				}
-			}
-		}*/
+		
 		return digit;
 	}
 
