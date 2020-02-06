@@ -16,35 +16,37 @@ public class Program
 		
 		if (end < start)
 		{
-			throw new ArgumentException();
+			throw new ArgumentException(nameof(end), "end < start");
 		}
 
 		if (start <= 1)
 		{
-			throw new ArgumentException();
+			throw new ArgumentException(nameof(start), "start <= 1");
 		}
 
-		var simpleNumbers = new List<int>();
+		var primeNumbers = new List<int>();
 				
 		for (int i = start; i <= end; i++)
 		{
-			if (IsSimple(i))
+			if (IsPrime(i))
 			{
-				simpleNumbers.Add(i);
+				primeNumbers.Add(i);
 			}
 		}
 
-		return simpleNumbers.ToArray();
+		return primeNumbers.ToArray();
 	}
 
 	// ДОБАВЬТЕ НОВЫЕ МЕТОДЫ, ЕСЛИ НЕОБХОДИМО
 	
-	private static bool IsSimple(int number)
+	private static bool IsPrime(int number)
 	{
 		for (int i = 2; i <= Math.Sqrt(number); i++)
 		{
 			if (number % i == 0)
+			{
 				return false;
+			}
 		}
 		
 		return true;
